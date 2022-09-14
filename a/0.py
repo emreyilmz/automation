@@ -1,6 +1,6 @@
 # 0 - youtube links collect
-from da import Channel 
-from da import YouTube
+from pytube import Channel 
+from pytube import YouTube
 
  
  
@@ -15,6 +15,8 @@ def main():
         index = y.find('<Caption lang="English" code="en">')
         if index == 7:
             print(url)
+            fout = open("links.txt", "a")
+            fout.write(url+"\n")
        
         
         

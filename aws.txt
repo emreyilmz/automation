@@ -1,0 +1,2 @@
+amazon bucket count
+https://bobbyhadz.com/blog/aws-cli-count-number-of-objects-in-s3-bucket

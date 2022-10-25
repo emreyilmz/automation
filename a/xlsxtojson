@@ -1,5 +1,7 @@
 var XLSX = require("xlsx");
-var workbook = XLSX.readFile("ar.xlsx");
+var fs = require("fs");
+
+var workbook = XLSX.readFile("1.xlsx");
 var sheet_name_list = workbook.SheetNames;
 console.log(sheet_name_list); // getting as Sheet1
 
@@ -35,5 +37,16 @@ sheet_name_list.forEach(function (y) {
     //drop those first two rows which are empty
     data.shift();
     data.shift();
-    console.log(data);
+    console.log("1. data", data);
+
+    fs.writeFileSync("./phraseFreqs.json", JSON.stringify(data));
+
+    /* const dataJson = JSON.stringify(data);
+
+    var stream = fs.createWriteStream("myFile.json", { flags: "a" });
+
+    stream.write(dataJson, function () {
+        // Now the data has been written.
+        console.log("g");
+    }); */
 });
